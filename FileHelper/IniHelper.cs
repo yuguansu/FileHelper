@@ -4,7 +4,7 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 
-namespace DAL.FileHelper
+namespace ConfigHelper
 {
     public class IniHelper
     {
@@ -16,6 +16,15 @@ namespace DAL.FileHelper
             set { iniFileName = value; }
         }
 
+        #region 获取int值
+        /// <summary>
+        /// 获取int值
+        /// </summary>
+        /// <param name="lpAppName"></param>
+        /// <param name="lpKeyName"></param>
+        /// <param name="nDefault"></param>
+        /// <param name="lpFileName"></param>
+        /// <returns></returns>
         [DllImport("kernel32.dll")]
         private static extern int GetPrivateProfileInt(
             string lpAppName,
@@ -23,7 +32,18 @@ namespace DAL.FileHelper
             int nDefault,
             string lpFileName
             );
-
+        #endregion
+        #region 获取String值
+        /// <summary>
+        /// 获取String值
+        /// </summary>
+        /// <param name="lpAppName"></param>
+        /// <param name="lpKeyName"></param>
+        /// <param name="lpDefault"></param>
+        /// <param name="lpReturnedString"></param>
+        /// <param name="nSize"></param>
+        /// <param name="lpFileName"></param>
+        /// <returns></returns>
         [DllImport("kernel32.dll")]
         private static extern int GetPrivateProfileString(
             string lpAppName,
@@ -33,7 +53,16 @@ namespace DAL.FileHelper
             int nSize,
             string lpFileName
             );
-
+        #endregion
+        #region 写入String值
+        /// <summary>
+        /// 写入String值
+        /// </summary>
+        /// <param name="lpAppName"></param>
+        /// <param name="lpKeyName"></param>
+        /// <param name="lpString"></param>
+        /// <param name="lpFileName"></param>
+        /// <returns></returns>
         [DllImport("kernel32.dll")]
         private static extern int WritePrivateProfileString(
             string lpAppName,
@@ -41,21 +70,24 @@ namespace DAL.FileHelper
             string lpString,
             string lpFileName
             );
-
+        #endregion
+        
         /// <summary>
-        /// 构造函数
+        /// 构造函数，赋予文件路径(全路径)
         /// </summary>
         /// <param name="aFileName">Ini文件路径</param>
         public IniHelper(string aFileName)
         {
             this.iniFileName = aFileName;
         }
+        /// <summary>
+        /// 默认构造函数，空
+        /// </summary>
         public IniHelper()
         {
 
         }
-
-
+        
         /// <summary>
         /// [扩展]读Int数值
         /// </summary>

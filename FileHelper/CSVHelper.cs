@@ -8,11 +8,7 @@ namespace DAL.FileHelper
     public class CSVHelper
     {
         /// <summary>
-<<<<<<< HEAD
         /// 将datatable数据全部写入csv中，按逗号分割，列标题作为第一行
-=======
-        /// 将datatable数据全部写入csv中，按逗号分割
->>>>>>> f8d4f85... 1.0.0.1 删除CSV写入时，弹出MessageBox。 增加CSV写入字符串。
         /// </summary>
         /// <param name="dt">datatable数据源</param>
         /// <param name="fullPath">需要写入的csv文件的完整路径</param>
@@ -50,13 +46,6 @@ namespace DAL.FileHelper
             }
             sw.Close();
             fs.Close();
-<<<<<<< HEAD
-=======
-            //DialogResult result = MessageBox.Show("CSV文件保存成功");
-            //if (result == DialogResult.OK)
-            //{
-            //    System.Diagnostics.Process.Start("explorer.exe");
-            //}
         }
         /// <summary>
         /// 写入一行字符串
@@ -77,12 +66,6 @@ namespace DAL.FileHelper
             
             sw.Close();
             fs.Close();
-            //DialogResult result = MessageBox.Show("CSV文件保存成功");
-            //if (result == DialogResult.OK)
-            //{
-            //    System.Diagnostics.Process.Start("explorer.exe");
-            //}
->>>>>>> f8d4f85... 1.0.0.1 删除CSV写入时，弹出MessageBox。 增加CSV写入字符串。
         }
         
         /// <summary>
@@ -124,7 +107,6 @@ namespace DAL.FileHelper
             return dt;
         }
         /// <summary>
-<<<<<<< HEAD
         /// 读取csv文件中所有数据到datatable中，第一行为列标题，其余为数据，列数以标题为主，按指定分隔符分割
         /// </summary>
         /// <param name="csvPath">csv文件的完整路径</param>
@@ -163,55 +145,49 @@ namespace DAL.FileHelper
             return dt;
         }
         /// <summary>
-=======
->>>>>>> f8d4f85... 1.0.0.1 删除CSV写入时，弹出MessageBox。 增加CSV写入字符串。
         /// 读取csv第一行数据，按逗号分割为string数组
         /// </summary>
-        /// <param name="csvPath">csv文件的完整路径</param>
+        /// <param name="csvFilePath">csv文件的完整路径</param>
         /// <returns></returns>
-        public static string[] ReadFirstLine(string csvPath)
+        public static string[] ReadFirstLine(string csvFilePath)
         {
-            if (!File.Exists(csvPath.Trim())) return null;
-            var line = File.ReadAllLines(csvPath).First();
+            if (!File.Exists(csvFilePath.Trim())) return null;
+            var line = File.ReadAllLines(csvFilePath).First();
             return line.Split(',');
         }
         /// <summary>
-<<<<<<< HEAD
         /// 读取csv第一行数据，按指定分隔符分割为string数组
         /// </summary>
-        /// <param name="csvPath">csv文件的完整路径</param>
+        /// <param name="csvFilePath">csv文件的完整路径</param>
         /// <param name="chrSplit">分隔符</param>
         /// <returns></returns>
-        public static string[] ReadFirstLine(string csvPath,char chrSplit)
+        public static string[] ReadFirstLine(string csvFilePath,char chrSplit)
         {
-            if (!File.Exists(csvPath.Trim())) return null;
-            var line = File.ReadAllLines(csvPath).First();
+            if (!File.Exists(csvFilePath.Trim())) return null;
+            var line = File.ReadAllLines(csvFilePath).First();
             return line.Split(chrSplit);
         }
         /// <summary>
         /// 读取csv第一行数据，按多个指定分隔符分割为string数组
         /// </summary>
-        /// <param name="csvPath">csv文件的完整路径</param>
+        /// <param name="csvFilePath">csv文件的完整路径</param>
         /// <param name="chrSplit">分隔符列表</param>
         /// <returns></returns>
-        public static string[] ReadFirstLine(string csvPath, char[] chrSplit)
+        public static string[] ReadFirstLine(string csvFilePath, char[] chrSplit)
         {
-            if (!File.Exists(csvPath.Trim())) return null;
-            var line = File.ReadAllLines(csvPath).First();
+            if (!File.Exists(csvFilePath.Trim())) return null;
+            var line = File.ReadAllLines(csvFilePath).First();
             return line.Split(chrSplit);
         }
         /// <summary>
-        /// 读取csv第一行数据
-=======
         /// 读取csv第一行数据，按逗号分割为string数组
->>>>>>> f8d4f85... 1.0.0.1 删除CSV写入时，弹出MessageBox。 增加CSV写入字符串。
         /// </summary>
-        /// <param name="csvPath">csv文件的完整路径</param>
+        /// <param name="csvFilePath">csv文件的完整路径</param>
         /// <returns></returns>
-        public static string ReadFirstLineString(string csvPath)
+        public static string ReadFirstLineString(string csvFilePath)
         {
-            if (!File.Exists(csvPath.Trim())) return null;
-            return File.ReadAllLines(csvPath).First();
+            if (!File.Exists(csvFilePath.Trim())) return null;
+            return File.ReadAllLines(csvFilePath).First();
         }
     }
 }
