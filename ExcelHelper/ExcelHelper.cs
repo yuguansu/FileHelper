@@ -7,7 +7,7 @@ using Excel = Microsoft.Office.Interop.Excel;
 
 namespace ExcelHelper
 {
-    public class ExcelHelper
+    public class ExcelHelperUtils
     {
         #region variables
 

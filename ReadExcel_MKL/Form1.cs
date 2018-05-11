@@ -38,7 +38,7 @@ namespace ReadExcel_MKL
             if (string.IsNullOrEmpty(sExcelPath)) return;
             if (!File.Exists(sExcelPath)) return;
 
-            Array arr = ExcelHelper.ExcelHelper.ReadExcel (sExcelPath,1);
+            Array arr = ExcelHelper.ExcelHelperUtils.ReadExcel (sExcelPath,1);
 
             //string[][] data = new string[arr.GetLength(0)][];
             //for (int i = 0; i < arr.GetLength(0); i++)

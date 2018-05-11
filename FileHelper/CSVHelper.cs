@@ -3,7 +3,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 
-namespace DAL.FileHelper
+namespace ConfigHelper
 {
     public class CSVHelper
     {
@@ -41,6 +41,46 @@ namespace DAL.FileHelper
                         str = string.Format("\"{0}\"",str);
                     }
                     data += str + ",";
+                }
+                sw.WriteLine(data);
+            }
+            sw.Close();
+            fs.Close();
+        }
+        /// <summary>
+        /// 将datatable数据全部写入csv中，按指定分隔符分割，列标题作为第一行
+        /// </summary>
+        /// <param name="dt">datatable数据源</param>
+        /// <param name="fullPath">需要写入的csv文件的完整路径</param>
+        public static void WriteCSV(DataTable dt, string fullPath ,char chr)
+        {
+            FileInfo file = new FileInfo(fullPath);
+            if (!file.Directory.Exists)
+            {
+                file.Directory.Create();
+            }
+            FileStream fs = new FileStream(fullPath, FileMode.Create, FileAccess.Write);
+            StreamWriter sw = new StreamWriter(fs, Encoding.UTF8);
+            string data = "";
+            //写列名
+            for (int i = 0; i < dt.Columns.Count; i++)
+            {
+                data += dt.Columns[i].ColumnName.ToString() + ",";
+            }
+            sw.WriteLine(data);
+            //写数据
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                data = "";
+                for (int j = 0; j < dt.Columns.Count; j++)
+                {
+                    string str = dt.Rows[i][j].ToString();
+                    str = str.Replace("\"", "\"\"");
+                    if (str.Contains(',') || str.Contains('"') || str.Contains('\r') || str.Contains('\n'))
+                    {
+                        str = string.Format("\"{0}\"", str);
+                    }
+                    data += str + chr;
                 }
                 sw.WriteLine(data);
             }

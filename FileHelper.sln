@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogHelper", "LogHelper\LogH
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestReadExcel_MKL", "ReadExcel_MKL\TestReadExcel_MKL.csproj", "{66793E35-7A00-4418-A6A2-0BF81AAA9491}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestLogHelper", "TestLogHelper\TestLogHelper.csproj", "{BC35AC80-C616-43D1-B4BB-56DE4E719DA6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestFileHelper", "TestLogHelper\TestFileHelper.csproj", "{BC35AC80-C616-43D1-B4BB-56DE4E719DA6}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TestClient", "TestClient", "{99584D34-B634-4E87-9EAE-3116057296F4}"
 EndProject
