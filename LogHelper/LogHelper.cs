@@ -48,7 +48,7 @@ namespace LogHelper
                     }
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             { }
         }
 
@@ -73,7 +73,7 @@ namespace LogHelper
                     }
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             { }
         }
 
