@@ -1,12 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Xml;
 
 namespace ConfigHelper
 {
-    public class XmlHelper
+    public class XmlHelperUtils
     {
         /// <summary>
         /// Xml文件全名，包含路径
@@ -16,7 +13,7 @@ namespace ConfigHelper
         /// <summary>
         /// 默认构造函数，默认Xml文件在当前路径下，名为DefaultSetting.xml
         /// </summary>
-        public XmlHelper()
+        public XmlHelperUtils()
         {
             string path = AppDomain.CurrentDomain.BaseDirectory;
             XmlFileName = path + "DefaultSetting.xml";
@@ -25,10 +22,11 @@ namespace ConfigHelper
         /// 构造函数
         /// </summary>
         /// <param name="filename">Xml文件全名，包含路径</param>
-        public XmlHelper(string filename)
+        public XmlHelperUtils(string filename)
         {
             XmlFileName = filename;
         }
+        
         /// <summary>
         /// 获取默认xml文件路径名，包含路径
         /// </summary>
@@ -133,7 +131,19 @@ namespace ConfigHelper
         }
 
         /// <summary>
-        /// 新建一级节点的属性，默认xml文件=当前路径\DefaultSetting.xml
+        /// 读取一级节点列表
+        /// </summary>
+        /// <param name="fileName"></param>
+        /// <returns></returns>
+        public static XmlNodeList ReadElementNames(string fileName)
+        {
+            XmlDocument xmlDoc = new XmlDocument();
+            xmlDoc.Load(fileName);
+            return xmlDoc.DocumentElement.ChildNodes;
+        }
+
+        /// <summary>
+        /// 修改一级节点的属性，默认xml文件=当前路径\DefaultSetting.xml
         /// </summary>
         /// <param name="elementName">一级节点名</param>
         /// <param name="attributeName">属性名</param>
@@ -143,7 +153,7 @@ namespace ConfigHelper
             CreateAttribute(GetDefaultXmlFileName(),elementName,attributeName,attributeValue);
         }
         /// <summary>
-        /// 新建一级节点的属性
+        /// 修改一级节点的属性
         /// </summary>
         /// <param name="fileName">xml文件名</param>
         /// <param name="elementName">一级节点名</param>
@@ -153,8 +163,12 @@ namespace ConfigHelper
         {
             XmlDocument xmlDoc = new XmlDocument();
             xmlDoc.Load(fileName);
-            xmlDoc.CreateAttribute(attributeName);
-            
+            XmlNodeList nodelist = xmlDoc.ChildNodes;
+            foreach (XmlNode node in nodelist)
+            {
+                XmlElement xe = (XmlElement)node;
+                
+            }
             xmlDoc.Save(fileName);
         }
 

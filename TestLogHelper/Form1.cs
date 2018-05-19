@@ -70,7 +70,7 @@ namespace TestLogHelper
             }
             if (!File.Exists(path))
             {
-                ConfigHelper.XmlHelper.CreateXmlFile(path);
+                ConfigHelper.XmlHelperUtils.CreateXmlFile(path);
             }
             txtXmlName.Text = path;
             
@@ -81,18 +81,18 @@ namespace TestLogHelper
             if (string.IsNullOrEmpty(txtRootElementName.Text.Trim())) return;
             if (string.IsNullOrEmpty(txtXmlName.Text.Trim()))
             {
-                ConfigHelper.XmlHelper.WriteRootElement(txtRootElementName.Text.Trim());
+                ConfigHelper.XmlHelperUtils.WriteRootElement(txtRootElementName.Text.Trim());
             }
             else
             {
-                ConfigHelper.XmlHelper.WriteRootElement(txtXmlName.Text.Trim(),txtRootElementName.Text.Trim());
+                ConfigHelper.XmlHelperUtils.WriteRootElement(txtXmlName.Text.Trim(),txtRootElementName.Text.Trim());
             }
             
         }
 
         private void btnReadRootElementName_Click(object sender, EventArgs e)
         {
-            txtRootElementName.Text = ConfigHelper.XmlHelper.ReadRootElementName();
+            txtRootElementName.Text = ConfigHelper.XmlHelperUtils.ReadRootElementName();
         }
 
         private void btnWriteElement_Click(object sender, EventArgs e)
@@ -100,7 +100,7 @@ namespace TestLogHelper
             if (string.IsNullOrEmpty(txtElementName.Text.Trim())) return;
             if (string.IsNullOrEmpty(txtElementValue.Text.Trim())) return;
 
-            ConfigHelper.XmlHelper.CreateElement(txtElementName.Text, txtElementValue.Text);
+            ConfigHelper.XmlHelperUtils.CreateElement(txtElementName.Text, txtElementValue.Text);
         }
 
         private void btnReadElementValue_Click(object sender, EventArgs e)
@@ -113,7 +113,7 @@ namespace TestLogHelper
             if (string.IsNullOrEmpty(txtElementName.Text.Trim())) return;
             if (string.IsNullOrEmpty(txtAttributeName.Text.Trim())) return;
             if (string.IsNullOrEmpty(txtAttributeValue.Text.Trim())) return;
-            ConfigHelper.XmlHelper.CreateAttribute(txtElementName.Text, txtAttributeName.Text, txtAttributeValue.Text);
+            ConfigHelper.XmlHelperUtils.CreateAttribute(txtElementName.Text, txtAttributeName.Text, txtAttributeValue.Text);
         }
 
         private void btnReadAttributeValue_Click(object sender, EventArgs e)

@@ -49,12 +49,18 @@
             this.label4 = new System.Windows.Forms.Label();
             this.btnWriteAttribute = new System.Windows.Forms.Button();
             this.btnWriteRootElement = new System.Windows.Forms.Button();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.tabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.tabPage3.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnWriteLogStart
             // 
             this.btnWriteLogStart.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnWriteLogStart.Location = new System.Drawing.Point(11, 11);
+            this.btnWriteLogStart.Location = new System.Drawing.Point(24, 24);
             this.btnWriteLogStart.Margin = new System.Windows.Forms.Padding(2);
             this.btnWriteLogStart.Name = "btnWriteLogStart";
             this.btnWriteLogStart.Size = new System.Drawing.Size(121, 39);
@@ -66,7 +72,7 @@
             // btnWriteLogStop
             // 
             this.btnWriteLogStop.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnWriteLogStop.Location = new System.Drawing.Point(181, 11);
+            this.btnWriteLogStop.Location = new System.Drawing.Point(194, 24);
             this.btnWriteLogStop.Margin = new System.Windows.Forms.Padding(2);
             this.btnWriteLogStop.Name = "btnWriteLogStop";
             this.btnWriteLogStop.Size = new System.Drawing.Size(121, 39);
@@ -78,7 +84,7 @@
             // btnCreateXml
             // 
             this.btnCreateXml.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnCreateXml.Location = new System.Drawing.Point(492, 79);
+            this.btnCreateXml.Location = new System.Drawing.Point(497, 44);
             this.btnCreateXml.Margin = new System.Windows.Forms.Padding(2);
             this.btnCreateXml.Name = "btnCreateXml";
             this.btnCreateXml.Size = new System.Drawing.Size(121, 31);
@@ -90,7 +96,7 @@
             // txtXmlName
             // 
             this.txtXmlName.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txtXmlName.Location = new System.Drawing.Point(12, 81);
+            this.txtXmlName.Location = new System.Drawing.Point(17, 46);
             this.txtXmlName.Name = "txtXmlName";
             this.txtXmlName.Size = new System.Drawing.Size(428, 26);
             this.txtXmlName.TabIndex = 1;
@@ -98,7 +104,7 @@
             // btnSelect
             // 
             this.btnSelect.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnSelect.Location = new System.Drawing.Point(445, 81);
+            this.btnSelect.Location = new System.Drawing.Point(450, 46);
             this.btnSelect.Margin = new System.Windows.Forms.Padding(2);
             this.btnSelect.Name = "btnSelect";
             this.btnSelect.Size = new System.Drawing.Size(30, 26);
@@ -111,7 +117,7 @@
             // btnReadRootElementName
             // 
             this.btnReadRootElementName.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnReadRootElementName.Location = new System.Drawing.Point(12, 131);
+            this.btnReadRootElementName.Location = new System.Drawing.Point(17, 96);
             this.btnReadRootElementName.Margin = new System.Windows.Forms.Padding(2);
             this.btnReadRootElementName.Name = "btnReadRootElementName";
             this.btnReadRootElementName.Size = new System.Drawing.Size(147, 30);
@@ -123,7 +129,7 @@
             // txtRootElementName
             // 
             this.txtRootElementName.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txtRootElementName.Location = new System.Drawing.Point(164, 133);
+            this.txtRootElementName.Location = new System.Drawing.Point(169, 98);
             this.txtRootElementName.Name = "txtRootElementName";
             this.txtRootElementName.Size = new System.Drawing.Size(261, 26);
             this.txtRootElementName.TabIndex = 1;
@@ -131,7 +137,7 @@
             // txtElementName
             // 
             this.txtElementName.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txtElementName.Location = new System.Drawing.Point(119, 179);
+            this.txtElementName.Location = new System.Drawing.Point(124, 144);
             this.txtElementName.Name = "txtElementName";
             this.txtElementName.Size = new System.Drawing.Size(261, 26);
             this.txtElementName.TabIndex = 1;
@@ -139,7 +145,7 @@
             // txtAttributeName
             // 
             this.txtAttributeName.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txtAttributeName.Location = new System.Drawing.Point(119, 272);
+            this.txtAttributeName.Location = new System.Drawing.Point(124, 237);
             this.txtAttributeName.Name = "txtAttributeName";
             this.txtAttributeName.Size = new System.Drawing.Size(261, 26);
             this.txtAttributeName.TabIndex = 1;
@@ -148,7 +154,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label1.Location = new System.Drawing.Point(13, 179);
+            this.label1.Location = new System.Drawing.Point(18, 144);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(65, 20);
             this.label1.TabIndex = 2;
@@ -158,7 +164,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label2.Location = new System.Drawing.Point(13, 272);
+            this.label2.Location = new System.Drawing.Point(18, 237);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(65, 20);
             this.label2.TabIndex = 2;
@@ -167,7 +173,7 @@
             // btnReadElementValue
             // 
             this.btnReadElementValue.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnReadElementValue.Location = new System.Drawing.Point(560, 209);
+            this.btnReadElementValue.Location = new System.Drawing.Point(565, 174);
             this.btnReadElementValue.Margin = new System.Windows.Forms.Padding(2);
             this.btnReadElementValue.Name = "btnReadElementValue";
             this.btnReadElementValue.Size = new System.Drawing.Size(127, 30);
@@ -179,7 +185,7 @@
             // btnReadAttributeValue
             // 
             this.btnReadAttributeValue.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnReadAttributeValue.Location = new System.Drawing.Point(560, 299);
+            this.btnReadAttributeValue.Location = new System.Drawing.Point(565, 264);
             this.btnReadAttributeValue.Margin = new System.Windows.Forms.Padding(2);
             this.btnReadAttributeValue.Name = "btnReadAttributeValue";
             this.btnReadAttributeValue.Size = new System.Drawing.Size(127, 30);
@@ -191,7 +197,7 @@
             // txtElementValue
             // 
             this.txtElementValue.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txtElementValue.Location = new System.Drawing.Point(119, 211);
+            this.txtElementValue.Location = new System.Drawing.Point(124, 176);
             this.txtElementValue.Name = "txtElementValue";
             this.txtElementValue.Size = new System.Drawing.Size(261, 26);
             this.txtElementValue.TabIndex = 1;
@@ -199,7 +205,7 @@
             // txtAttributeValue
             // 
             this.txtAttributeValue.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txtAttributeValue.Location = new System.Drawing.Point(119, 304);
+            this.txtAttributeValue.Location = new System.Drawing.Point(124, 269);
             this.txtAttributeValue.Name = "txtAttributeValue";
             this.txtAttributeValue.Size = new System.Drawing.Size(261, 26);
             this.txtAttributeValue.TabIndex = 1;
@@ -207,7 +213,7 @@
             // btnWriteElement
             // 
             this.btnWriteElement.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnWriteElement.Location = new System.Drawing.Point(399, 192);
+            this.btnWriteElement.Location = new System.Drawing.Point(404, 157);
             this.btnWriteElement.Margin = new System.Windows.Forms.Padding(2);
             this.btnWriteElement.Name = "btnWriteElement";
             this.btnWriteElement.Size = new System.Drawing.Size(127, 30);
@@ -220,7 +226,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label3.Location = new System.Drawing.Point(13, 211);
+            this.label3.Location = new System.Drawing.Point(18, 176);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(51, 20);
             this.label3.TabIndex = 2;
@@ -229,7 +235,7 @@
             // btnClear
             // 
             this.btnClear.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnClear.Location = new System.Drawing.Point(730, 11);
+            this.btnClear.Location = new System.Drawing.Point(683, 21);
             this.btnClear.Margin = new System.Windows.Forms.Padding(2);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(121, 39);
@@ -242,7 +248,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label4.Location = new System.Drawing.Point(13, 304);
+            this.label4.Location = new System.Drawing.Point(18, 269);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(51, 20);
             this.label4.TabIndex = 2;
@@ -251,7 +257,7 @@
             // btnWriteAttribute
             // 
             this.btnWriteAttribute.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnWriteAttribute.Location = new System.Drawing.Point(399, 284);
+            this.btnWriteAttribute.Location = new System.Drawing.Point(404, 249);
             this.btnWriteAttribute.Margin = new System.Windows.Forms.Padding(2);
             this.btnWriteAttribute.Name = "btnWriteAttribute";
             this.btnWriteAttribute.Size = new System.Drawing.Size(127, 30);
@@ -263,7 +269,7 @@
             // btnWriteRootElement
             // 
             this.btnWriteRootElement.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnWriteRootElement.Location = new System.Drawing.Point(430, 133);
+            this.btnWriteRootElement.Location = new System.Drawing.Point(435, 98);
             this.btnWriteRootElement.Margin = new System.Windows.Forms.Padding(2);
             this.btnWriteRootElement.Name = "btnWriteRootElement";
             this.btnWriteRootElement.Size = new System.Drawing.Size(147, 30);
@@ -272,38 +278,72 @@
             this.btnWriteRootElement.UseVisualStyleBackColor = true;
             this.btnWriteRootElement.Click += new System.EventHandler(this.btnWriteRootElement_Click);
             // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Location = new System.Drawing.Point(12, 22);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(842, 429);
+            this.tabControl1.TabIndex = 3;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.txtXmlName);
+            this.tabPage1.Controls.Add(this.btnClear);
+            this.tabPage1.Controls.Add(this.label4);
+            this.tabPage1.Controls.Add(this.btnSelect);
+            this.tabPage1.Controls.Add(this.label2);
+            this.tabPage1.Controls.Add(this.btnCreateXml);
+            this.tabPage1.Controls.Add(this.label3);
+            this.tabPage1.Controls.Add(this.btnReadRootElementName);
+            this.tabPage1.Controls.Add(this.label1);
+            this.tabPage1.Controls.Add(this.btnWriteRootElement);
+            this.tabPage1.Controls.Add(this.txtAttributeName);
+            this.tabPage1.Controls.Add(this.btnReadElementValue);
+            this.tabPage1.Controls.Add(this.txtAttributeValue);
+            this.tabPage1.Controls.Add(this.btnWriteElement);
+            this.tabPage1.Controls.Add(this.txtElementValue);
+            this.tabPage1.Controls.Add(this.btnReadAttributeValue);
+            this.tabPage1.Controls.Add(this.txtElementName);
+            this.tabPage1.Controls.Add(this.btnWriteAttribute);
+            this.tabPage1.Controls.Add(this.txtRootElementName);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(834, 403);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "XmlHelper";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.btnWriteLogStart);
+            this.tabPage3.Controls.Add(this.btnWriteLogStop);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(620, 383);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "LogHelper";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(875, 463);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtAttributeName);
-            this.Controls.Add(this.txtAttributeValue);
-            this.Controls.Add(this.txtElementValue);
-            this.Controls.Add(this.txtElementName);
-            this.Controls.Add(this.txtRootElementName);
-            this.Controls.Add(this.txtXmlName);
-            this.Controls.Add(this.btnClear);
-            this.Controls.Add(this.btnWriteLogStop);
-            this.Controls.Add(this.btnWriteAttribute);
-            this.Controls.Add(this.btnReadAttributeValue);
-            this.Controls.Add(this.btnWriteElement);
-            this.Controls.Add(this.btnReadElementValue);
-            this.Controls.Add(this.btnWriteRootElement);
-            this.Controls.Add(this.btnReadRootElementName);
-            this.Controls.Add(this.btnCreateXml);
-            this.Controls.Add(this.btnSelect);
-            this.Controls.Add(this.btnWriteLogStart);
+            this.Controls.Add(this.tabControl1);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.tabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
+            this.tabPage3.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -330,6 +370,9 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnWriteAttribute;
         private System.Windows.Forms.Button btnWriteRootElement;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabPage3;
     }
 }
 
