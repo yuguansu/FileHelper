@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Xml;
 
 namespace ConfigHelper
@@ -6,63 +7,62 @@ namespace ConfigHelper
     public class XmlHelperUtils
     {
         /// <summary>
-        /// Xml文件全名，包含路径
-        /// </summary>
-        private static string XmlFileName { get; set; }
-        
-        /// <summary>
-        /// 默认构造函数，默认Xml文件在当前路径下，名为DefaultSetting.xml
+        /// 默认构造函数
         /// </summary>
         public XmlHelperUtils()
         {
-            string path = AppDomain.CurrentDomain.BaseDirectory;
-            XmlFileName = path + "DefaultSetting.xml";
+
         }
+
         /// <summary>
-        /// 构造函数
+        /// Xml文件全名，包含路径
         /// </summary>
-        /// <param name="filename">Xml文件全名，包含路径</param>
-        public XmlHelperUtils(string filename)
-        {
-            XmlFileName = filename;
-        }
-        
+        private static string XmlFileName = GetDefaultXmlFileName();
+
         /// <summary>
         /// 获取默认xml文件路径名，包含路径
         /// </summary>
-        /// <returns>默认xml文件路径名"DefaultSetting.xml"，包含路径</returns>
+        /// <returns>默认xml文件路径名"Default.xml"，包含路径</returns>
         private static string GetDefaultXmlFileName()
         {
             string path = AppDomain.CurrentDomain.BaseDirectory;
-            XmlFileName = path + "DefaultSetting.xml";
+            XmlFileName = path + "\\Default.xml";
             return XmlFileName;
         }
+
+        #region 创建XML
         /// <summary>
-        /// 创建xml空文件，默认当前路径，文件名=DefaultSetting.xml
+        /// 创建xml文件，默认当前路径，文件名=Default.xml
         /// </summary>
         public static void CreateXmlFile()
         {
-            CreateXmlFile(GetDefaultXmlFileName());
+            CreateXmlFile(XmlFileName);
         }
-        
         /// <summary>
-        /// 创建xml空文件
+        /// 创建xml空文件，写入根节点configuration
         /// </summary>
         /// <param name="fileName">xml文件名，包含路径</param>
         public static void CreateXmlFile(string fileName)
         {
-            XmlWriter xw = XmlWriter.Create(fileName);
-            xw.Flush();
-            xw.Close();
+            FileInfo f = new FileInfo(fileName);
+            if (!f.Exists)
+            {
+                XmlWriter xw = XmlWriter.Create(fileName);
+                xw.Flush();
+                xw.Close();
+                WriteRootElement(fileName, "configuration");
+            }
         }
+        #endregion
 
+        #region 写入根节点
         /// <summary>
-        /// 写入根节点，默认xml文件=当前路径\DefaultSetting.xml
+        /// 写入根节点，默认xml文件=当前路径\Default.xml
         /// </summary>
         /// <param name="rootElement">根节点名称</param>
         public static void WriteRootElement(string rootElement)
         {
-            WriteRootElement(GetDefaultXmlFileName(), rootElement);
+            WriteRootElement(XmlFileName, rootElement);
         }
         /// <summary>
         /// 写入根节点
@@ -80,14 +80,28 @@ namespace ConfigHelper
             xml.AppendChild(root);
             xml.Save(fileName);
         }
+        #endregion
+
+        #region 读取节点
+        /// <summary>
+        /// 读取一级节点列表
+        /// </summary>
+        /// <param name="fileName"></param>
+        /// <returns></returns>
+        public static XmlNodeList ReadElementNames(string fileName)
+        {
+            XmlDocument xmlDoc = new XmlDocument();
+            xmlDoc.Load(fileName);
+            return xmlDoc.DocumentElement.ChildNodes;
+        }
 
         /// <summary>
-        /// 获取默认xml文件中的根节点名称，默认xml文件=当前路径\DefaultSetting.xml
+        /// 获取默认xml文件中的根节点名称，默认xml文件=当前路径\Default.xml
         /// </summary>
         /// <returns></returns>
         public static string ReadRootElementName()
         {
-            return ReadRootElementName(GetDefaultXmlFileName());
+            return ReadRootElementName(XmlFileName);
         }
         /// <summary>
         /// 获取指定xml文件中的根节点名称
@@ -100,15 +114,16 @@ namespace ConfigHelper
             xml.Load(fileName);
             return xml.DocumentElement.Name;
         }
+        #endregion
 
         /// <summary>
-        /// 新建根节点下的一级节点，默认xml文件=当前路径\DefaultSetting.xml
+        /// 新建根节点下的一级节点，默认xml文件=当前路径\Default.xml
         /// </summary>
         /// <param name="elementName">节点名称</param>
         /// <param name="innerText">节点值</param>
         public static void CreateElement(string elementName, string innerText)
         {
-            CreateElement(GetDefaultXmlFileName(), elementName, innerText);
+            CreateElement(XmlFileName, elementName, innerText);
         }
         /// <summary>
         /// 新建根节点下的一级节点
@@ -131,26 +146,14 @@ namespace ConfigHelper
         }
 
         /// <summary>
-        /// 读取一级节点列表
-        /// </summary>
-        /// <param name="fileName"></param>
-        /// <returns></returns>
-        public static XmlNodeList ReadElementNames(string fileName)
-        {
-            XmlDocument xmlDoc = new XmlDocument();
-            xmlDoc.Load(fileName);
-            return xmlDoc.DocumentElement.ChildNodes;
-        }
-
-        /// <summary>
-        /// 修改一级节点的属性，默认xml文件=当前路径\DefaultSetting.xml
+        /// 修改一级节点的属性，默认xml文件=当前路径\Default.xml
         /// </summary>
         /// <param name="elementName">一级节点名</param>
         /// <param name="attributeName">属性名</param>
         /// <param name="attributeValue">属性值</param>
         public static void CreateAttribute(string elementName, string attributeName, string attributeValue)
         {
-            CreateAttribute(GetDefaultXmlFileName(),elementName,attributeName,attributeValue);
+            CreateAttribute(XmlFileName,elementName,attributeName,attributeValue);
         }
         /// <summary>
         /// 修改一级节点的属性
@@ -171,7 +174,6 @@ namespace ConfigHelper
             }
             xmlDoc.Save(fileName);
         }
-
-
+        
     }
 }
