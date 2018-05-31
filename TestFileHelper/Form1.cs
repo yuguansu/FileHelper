@@ -100,7 +100,7 @@ namespace TestLogHelper
             if (string.IsNullOrEmpty(txtElementName.Text.Trim())) return;
             if (string.IsNullOrEmpty(txtElementValue.Text.Trim())) return;
 
-            ConfigHelper.XmlHelperUtils.CreateElement(txtElementName.Text, txtElementValue.Text);
+            ConfigHelper.XmlHelperUtils.CreateElementToRoot(txtElementName.Text, txtElementValue.Text);
         }
 
         private void btnReadElementValue_Click(object sender, EventArgs e)
@@ -117,6 +117,16 @@ namespace TestLogHelper
         }
 
         private void btnReadAttributeValue_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnWriteNode_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnReadNode_Click(object sender, EventArgs e)
         {
 
         }

@@ -52,6 +52,12 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.txtNodeName = new System.Windows.Forms.TextBox();
+            this.txtNodeValue = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.btnWriteNode = new System.Windows.Forms.Button();
+            this.btnReadNode = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage3.SuspendLayout();
@@ -145,7 +151,7 @@
             // txtAttributeName
             // 
             this.txtAttributeName.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txtAttributeName.Location = new System.Drawing.Point(124, 237);
+            this.txtAttributeName.Location = new System.Drawing.Point(124, 319);
             this.txtAttributeName.Name = "txtAttributeName";
             this.txtAttributeName.Size = new System.Drawing.Size(261, 26);
             this.txtAttributeName.TabIndex = 1;
@@ -164,7 +170,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label2.Location = new System.Drawing.Point(18, 237);
+            this.label2.Location = new System.Drawing.Point(18, 319);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(65, 20);
             this.label2.TabIndex = 2;
@@ -185,7 +191,7 @@
             // btnReadAttributeValue
             // 
             this.btnReadAttributeValue.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnReadAttributeValue.Location = new System.Drawing.Point(565, 264);
+            this.btnReadAttributeValue.Location = new System.Drawing.Point(565, 346);
             this.btnReadAttributeValue.Margin = new System.Windows.Forms.Padding(2);
             this.btnReadAttributeValue.Name = "btnReadAttributeValue";
             this.btnReadAttributeValue.Size = new System.Drawing.Size(127, 30);
@@ -205,7 +211,7 @@
             // txtAttributeValue
             // 
             this.txtAttributeValue.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txtAttributeValue.Location = new System.Drawing.Point(124, 269);
+            this.txtAttributeValue.Location = new System.Drawing.Point(124, 351);
             this.txtAttributeValue.Name = "txtAttributeValue";
             this.txtAttributeValue.Size = new System.Drawing.Size(261, 26);
             this.txtAttributeValue.TabIndex = 1;
@@ -248,7 +254,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label4.Location = new System.Drawing.Point(18, 269);
+            this.label4.Location = new System.Drawing.Point(18, 351);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(51, 20);
             this.label4.TabIndex = 2;
@@ -257,7 +263,7 @@
             // btnWriteAttribute
             // 
             this.btnWriteAttribute.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnWriteAttribute.Location = new System.Drawing.Point(404, 249);
+            this.btnWriteAttribute.Location = new System.Drawing.Point(404, 331);
             this.btnWriteAttribute.Margin = new System.Windows.Forms.Padding(2);
             this.btnWriteAttribute.Name = "btnWriteAttribute";
             this.btnWriteAttribute.Size = new System.Drawing.Size(127, 30);
@@ -296,15 +302,21 @@
             this.tabPage1.Controls.Add(this.btnSelect);
             this.tabPage1.Controls.Add(this.label2);
             this.tabPage1.Controls.Add(this.btnCreateXml);
+            this.tabPage1.Controls.Add(this.label6);
             this.tabPage1.Controls.Add(this.label3);
             this.tabPage1.Controls.Add(this.btnReadRootElementName);
+            this.tabPage1.Controls.Add(this.label5);
             this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Controls.Add(this.btnWriteRootElement);
             this.tabPage1.Controls.Add(this.txtAttributeName);
+            this.tabPage1.Controls.Add(this.btnReadNode);
             this.tabPage1.Controls.Add(this.btnReadElementValue);
             this.tabPage1.Controls.Add(this.txtAttributeValue);
+            this.tabPage1.Controls.Add(this.btnWriteNode);
             this.tabPage1.Controls.Add(this.btnWriteElement);
+            this.tabPage1.Controls.Add(this.txtNodeValue);
             this.tabPage1.Controls.Add(this.txtElementValue);
+            this.tabPage1.Controls.Add(this.txtNodeName);
             this.tabPage1.Controls.Add(this.btnReadAttributeValue);
             this.tabPage1.Controls.Add(this.txtElementName);
             this.tabPage1.Controls.Add(this.btnWriteAttribute);
@@ -324,10 +336,70 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(620, 383);
+            this.tabPage3.Size = new System.Drawing.Size(834, 403);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "LogHelper";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // txtNodeName
+            // 
+            this.txtNodeName.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txtNodeName.Location = new System.Drawing.Point(226, 225);
+            this.txtNodeName.Name = "txtNodeName";
+            this.txtNodeName.Size = new System.Drawing.Size(261, 26);
+            this.txtNodeName.TabIndex = 1;
+            // 
+            // txtNodeValue
+            // 
+            this.txtNodeValue.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txtNodeValue.Location = new System.Drawing.Point(226, 257);
+            this.txtNodeValue.Name = "txtNodeValue";
+            this.txtNodeValue.Size = new System.Drawing.Size(261, 26);
+            this.txtNodeValue.TabIndex = 1;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label5.Location = new System.Drawing.Point(120, 225);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(79, 20);
+            this.label5.TabIndex = 2;
+            this.label5.Text = "子节点名称";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label6.Location = new System.Drawing.Point(120, 257);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(65, 20);
+            this.label6.TabIndex = 2;
+            this.label6.Text = "子节点值";
+            // 
+            // btnWriteNode
+            // 
+            this.btnWriteNode.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnWriteNode.Location = new System.Drawing.Point(497, 237);
+            this.btnWriteNode.Margin = new System.Windows.Forms.Padding(2);
+            this.btnWriteNode.Name = "btnWriteNode";
+            this.btnWriteNode.Size = new System.Drawing.Size(127, 30);
+            this.btnWriteNode.TabIndex = 0;
+            this.btnWriteNode.Text = "写入xml子节点";
+            this.btnWriteNode.UseVisualStyleBackColor = true;
+            this.btnWriteNode.Click += new System.EventHandler(this.btnWriteNode_Click);
+            // 
+            // btnReadNode
+            // 
+            this.btnReadNode.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnReadNode.Location = new System.Drawing.Point(658, 254);
+            this.btnReadNode.Margin = new System.Windows.Forms.Padding(2);
+            this.btnReadNode.Name = "btnReadNode";
+            this.btnReadNode.Size = new System.Drawing.Size(127, 30);
+            this.btnReadNode.TabIndex = 0;
+            this.btnReadNode.Text = "读取xml子节点值";
+            this.btnReadNode.UseVisualStyleBackColor = true;
+            this.btnReadNode.Click += new System.EventHandler(this.btnReadNode_Click);
             // 
             // Form1
             // 
@@ -373,6 +445,12 @@
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txtNodeValue;
+        private System.Windows.Forms.TextBox txtNodeName;
+        private System.Windows.Forms.Button btnReadNode;
+        private System.Windows.Forms.Button btnWriteNode;
     }
 }
 
