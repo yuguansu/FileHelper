@@ -57,10 +57,10 @@ namespace ConfigHelper
         /// 获取默认xml文件中的根节点名称，默认xml文件=当前路径\Default.xml
         /// </summary>
         /// <returns></returns>
-        public static string ReadRootElementName()
-        {
-            return ReadRootElementName(xmlFileName);
-        }
+        //public static string ReadRootElementName()
+        //{
+        //    return ReadRootElementName(xmlFileName);
+        //}
         /// <summary>
         /// 获取指定xml文件中的根节点名称
         /// </summary>
