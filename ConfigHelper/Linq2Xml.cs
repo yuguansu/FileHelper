@@ -66,11 +66,11 @@ namespace ConfigHelper
         /// </summary>
         /// <param name="sFileName"></param>
         /// <returns></returns>
-        public static string ReadRootElementName(string sFileName)
-        {
-            XDocument xml = new XDocument();
+        //public static string ReadRootElementName(string sFileName)
+        //{
+        //    XDocument xml = new XDocument();
             
-        }
+        //}
         #endregion
 
     }
