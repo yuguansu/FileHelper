@@ -4,6 +4,9 @@ using System.Xml;
 
 namespace ConfigHelper
 {
+    /// <summary>
+    /// xml工具类源码,using System.Xml
+    /// </summary>
     public class XmlHelperUtils
     {
         #region 构造函数
@@ -16,9 +19,10 @@ namespace ConfigHelper
         }
         #endregion
 
-        #region  xmlFileName
+        #region  xmlFileName : 当前路径\Default.xml
         /// <summary>
         /// Xml文件全名，包含路径
+        /// 默认：当前路径\Default.xml
         /// </summary>
         public static string xmlFileName = GetDefaultXmlFileName();        
         /// <summary>
@@ -53,7 +57,7 @@ namespace ConfigHelper
                 XmlWriter xw = XmlWriter.Create(sFileName);
                 xw.Flush();
                 xw.Close();
-                WriteRootElement(sFileName, "root");
+                WriteRootElement(sFileName, "configuration");
             }
         }
         #endregion
@@ -84,12 +88,12 @@ namespace ConfigHelper
         /// <summary>
         /// 写入根节点
         /// 默认xml文件：当前路径\Default.xml
-        /// 默认根节点名：root
+        /// 默认根节点名：configuration
         /// </summary>
         /// <param name="rootElement">根节点名称</param>
         public static void WriteRootElement()
         {
-            WriteRootElement(xmlFileName, "root");
+            WriteRootElement(xmlFileName, "configuration");
         }
         /// <summary>
         /// 写入根节点
