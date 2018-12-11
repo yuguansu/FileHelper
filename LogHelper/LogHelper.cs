@@ -32,8 +32,6 @@ namespace LogHelper
             try
             {
                 string path = AppDomain.CurrentDomain.BaseDirectory;
-                string path2 = Environment.CurrentDirectory;
-                string sPath = Path.GetDirectoryName(new Uri(Assembly.GetExecutingAssembly().CodeBase).LocalPath);
 
                 LogFilePath = path.Substring(0, path.LastIndexOf('\\')) + "\\" + LogPathName + "\\"+ FunctionTypeName + "\\" + FunctionName;
 
